@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
-import logo from "../../assets/KhatamKaroLogo.jpeg";
 import Typed from "typed.js";
-
+import { Link } from "react-router-dom";
 export function Home() {
   const autoType = useRef(null);
 
@@ -21,55 +20,6 @@ export function Home() {
   }, []);
   return (
     <div>
-      <header>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom border-2 ">
-          <div className="container-fluid">
-            <div className="navbar-brand d-flex align-items-center">
-              <div>
-                <img
-                  src={logo}
-                  style={{ width: "75px", height: "75px" }}
-                  alt="Brand-Logo"
-                />
-              </div>
-              <div>KHATAM KARO</div>
-            </div>
-            <div>
-              <button
-                className="navbar-toggler"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-              >
-                <span className="navbar-toggler-icon"></span>
-              </button>
-            </div>
-            <div
-              className=" collapse navbar-collapse ms-5 "
-              id="navbarSupportedContent"
-            >
-              <ul className=" navbar-nav    d-flex align-items-center gap-5 list-unstyled me-5 ">
-                <li className="nav-item">
-                  <a href="#">HOME</a>
-                </li>
-                <li className="nav-item">
-                  <a href="#">ABOUT</a>
-                </li>
-                <li className="nav-item">
-                  <button className="btn border border-1 border-dark rounded-5 p-2 px-4 btn1">
-                    REGISTER
-                  </button>
-                </li>
-                <li className="nav-item">
-                  <button className="btn border border-1 border-dark rounded-5 p-2 px-4 btn2">
-                    LOGIN
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
-
       <main className="home-main d-flex">
         <section className="main-section1 w-50 p-5 ">
           <div className="h1  mb-5 text-center header-2">
@@ -97,14 +47,19 @@ export function Home() {
           </div>
 
           <div className="mt-2 text-center ">
-            <button className="ms-5 btn border border-2 rounded-5 p-3 login-btn">
-              <span className="bi bi-link-45deg me-3 "></span>Get Started
-            </button>
-            <button className="ms-5 btn border border-2 rounded-5 p-3 register-btn">
-              {" "}
-              <span className="bi bi-person-fill-gear me-3 "></span>Create an
-              Account
-            </button>
+            <Link to="/login">
+              <button className="ms-5 btn border border-2 rounded-5 p-3 login-btn">
+                <span className="bi bi-link-45deg me-3 "></span>Get Started
+              </button>
+            </Link>
+
+            <Link to="/register">
+              <button className="ms-5 btn border border-2 rounded-5 p-3 register-btn">
+                {" "}
+                <span className="bi bi-person-fill-gear me-3 "></span>Create an
+                Account
+              </button>
+            </Link>
           </div>
         </section>
         <section className="main-section2 w-50  ">
