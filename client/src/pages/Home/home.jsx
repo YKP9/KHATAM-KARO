@@ -20,8 +20,9 @@ export function Home() {
   }, []);
   return (
     <div>
+
       <main className="home-main d-flex">
-        <section className="main-section1 w-50 p-5 ">
+        <section className="main-section1 bg-transparent w-50 p-5 ">
           <div className="h1  mb-5 text-center header-2">
             SCHEDULE{" "}
             <span ref={autoType} className="auto-type">
@@ -62,10 +63,14 @@ export function Home() {
             </Link>
           </div>
         </section>
+
         <section className="main-section2 w-50  ">
-          <div className="home-section-img"></div>
+          <div className="home-section-img">
+            
+          </div>
           {/* <img src={homeImg} alt="" /> */}
         </section>
+
       </main>
     </div>
   );
